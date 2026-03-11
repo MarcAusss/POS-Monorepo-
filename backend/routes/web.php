@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\FruitController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
