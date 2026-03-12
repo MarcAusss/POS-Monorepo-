@@ -1,14 +1,13 @@
 <?php
 
-use App\Http\Controllers\FruitController;
-use App\Http\Controllers\ReservationController;
-use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\Api\FruitController;
+use App\Http\Controllers\Api\ReservationController;
+use App\Http\Controllers\Api\TransactionController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::prefix('api')->group(function () {
+    Route::apiResource('fruits', FruitController::class);
+    Route::apiResource('transactions', TransactionController::class);
+    Route::apiResource('reservations', ReservationController::class);
 });
-// routes/api.php
-Route::apiResource('fruits', FruitController::class);
-Route::apiResource('transactions', TransactionController::class);
-Route::apiResource('reservations', ReservationController::class); 
